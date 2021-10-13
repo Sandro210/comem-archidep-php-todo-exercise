@@ -9,7 +9,7 @@ define('BASE_URL', '/comem-archidep-php-todo-exercise/');
 
 // Database connection parameters.
 define('DB_USER', 'todolist');
-define('DB_PASS', 'exoArchiDep!');
+define('DB_PASS', 'AuLeTaMa');
 define('DB_NAME', 'todolist');
 define('DB_HOST', '127.0.0.1');
 define('DB_PORT', '3306');
@@ -44,7 +44,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $updateQuery = ''; // IMPLEMENT ME
+        $updateQuery = 'UPDATE todo SET done = NOT done WHERE id = \''.$id.'\'';
         if(!$db->query($updateQuery)) {
           die(print_r($db->errorInfo(), true));
         }
